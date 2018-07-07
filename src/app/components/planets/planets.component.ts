@@ -5,24 +5,24 @@ import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
 
 import { Globals } from '../../class/globals';
 
-import { ICustomer, IPlanet } from '../../class/Interfaces';
+import { ICustomer, IPlanet, IResident } from '../../class/Interfaces';
 
 @Component({
-  selector: 'peoples-component',
-  templateUrl: './peoples.component.html',
-  styleUrls: ['./peoples.component.scss']
+  selector: 'planets-component',
+  templateUrl: './planets.component.html',
+  styleUrls: ['./planets.component.scss']
 })
-export class PeoplesComponent implements OnInit {
+export class PlanetsComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   versions = env.versions;
-  public peoples:ICustomer[];
+  public planets:IPlanet[];
   public currentPage:number = 1;
 
   constructor(public globals:Globals){
     this.currentPage = 1;
-    globals.apiGetPeoples(this.currentPage).subscribe(data => {
-    this.peoples = data;
-    console.log(this.peoples)
+    globals.apiGetPlanets(this.currentPage).subscribe(data => {
+    this.planets = data;
+    console.log(this.planets)
    });
   }
 
@@ -34,14 +34,14 @@ export class PeoplesComponent implements OnInit {
 
   public nextPage():void{
     this.currentPage++;
-    this.globals.apiGetPeoples(this.currentPage).subscribe(data => {
-    this.peoples = data;
+    this.globals.apiGetPlanets(this.currentPage).subscribe(data => {
+    this.planets = data;
    });
   }
   public previousPage():void{
     this.currentPage--;
-    this.globals.apiGetPeoples(this.currentPage).subscribe(data => {
-    this.peoples = data;
+    this.globals.apiGetPlanets(this.currentPage).subscribe(data => {
+    this.planets = data;
    });
   }
 }

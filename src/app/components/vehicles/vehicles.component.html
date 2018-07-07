@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1 class="main-heading">Peoples</h1>
+      <h1 class="main-heading">Vehicles</h1>
     </div>
   </div>
   <div class="next">
-    <button mat-fab (click)="nextPage()" *ngIf="currentPage <= 8">></button>
+    <button mat-fab (click)="nextPage()" *ngIf="currentPage <= 3">></button>
   </div>
   <div class="previous">
     <button mat-fab (click)="previousPage()" *ngIf="currentPage > 1"><</button>
   </div>
   <div class="row align-items-end">
-    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements" *ngFor="let people of peoples">
-      <people-component [people]="people"></people-component>
+    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements" *ngFor="let vehicle of vehicles">
+      <vehicle-component [vehicle]="vehicle"></vehicle-component>
     </div>
   </div>
 </div>

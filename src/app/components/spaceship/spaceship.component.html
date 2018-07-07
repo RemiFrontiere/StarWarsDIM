@@ -1,0 +1,35 @@
+
+  <mat-card>
+    <mat-card-title>{{spaceship.name}}</mat-card-title>
+    <img mat-card-image src="assets/destroy.png" alt="Photo">
+    <mat-card-content>
+      <mat-label><b>Model : </b>{{spaceship.model}}</mat-label>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-label><b>Passenger : </b>{{spaceship.passengers}}</mat-label>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-label><b>Hyperdrive rating : </b>{{spaceship.hyperdrive_rating}}</mat-label>
+    </mat-card-content>
+    <mat-card-content class="terrain">
+      <mat-label><b>Manufacturer : </b>{{spaceship.manufacturer}}</mat-label>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-label><b>Lenght : </b>{{spaceship.length}}</mat-label>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-label><b>Max atmosphering speed: </b>{{spaceship.max_atmosphering_speed}}</mat-label>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-label><b>Cargo capacity : </b>{{spaceship.cargo_capacity}}</mat-label>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-label><b>Coast in credits : </b>{{spaceship.cost_in_credits}}</mat-label>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button *ngFor="let pilot of pilots">
+        <mat-icon class="material-icons">face</mat-icon>
+        {{pilot.name}}
+      </a>
+    </mat-card-actions>
+  </mat-card>

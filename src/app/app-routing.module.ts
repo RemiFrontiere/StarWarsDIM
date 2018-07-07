@@ -3,12 +3,30 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { SettingsComponent } from './settings';
 import { PeoplesComponent } from './components/peoples/peoples.component';
+import { PlanetsComponent } from './components/planets/planets.component';
+import { VehiclesComponent } from './components/vehicles/vehicles.component';
+import { SpaceshipsComponent } from './components/spaceships/spaceships.component';
 
 const routes: Routes = [
   {
     path: 'peoples',
     component: PeoplesComponent,
     data: { title: 'Peoples' }
+  },
+  {
+    path: 'planets',
+    component: PlanetsComponent,
+    data: { title: 'Planets' }
+  },
+  {
+    path: 'vehicles',
+    component: VehiclesComponent,
+    data: { title: 'Vehicles' }
+  },
+  {
+    path: 'spaceships',
+    component: SpaceshipsComponent,
+    data: { title: 'Spaceships' }
   },
   {
     path: '',

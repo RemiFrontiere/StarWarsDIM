@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-title><code>{{people.gender}}</code>{{people.name}}</mat-card-title>
+  <mat-card-subtitle>
+
+  </mat-card-subtitle>
+  <mat-card-content>
+    <mat-label><b>Birth Year : </b>{{people.birth_year}}</mat-label>
+  </mat-card-content>
+  <mat-card-content>
+    <mat-label><b>Mass : </b>{{people.mass}} kg</mat-label>
+  </mat-card-content>
+  <mat-card-content>
+    <mat-label><b>Height : </b>{{people.height}} cm</mat-label>
+  </mat-card-content>
+  <mat-card-content>
+    <mat-label><b>Skin Color : </b>{{people.skin_color}}</mat-label>
+  </mat-card-content>
+  <mat-card-content>
+    <mat-label><b>Eyes color : </b>{{people.eye_color}}</mat-label>
+  </mat-card-content>
+  <mat-card-content>
+    <mat-label *ngIf="people.hair_color != 'none'"><b>Hair color : </b>{{people.hair_color}}</mat-label>
+    <mat-label *ngIf="people.hair_color == 'none'"><b>No hair</b></mat-label>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button *ngIf="planet">
+      <mat-icon class="material-icons">home</mat-icon>
+      {{ planet.name }}
+    </a>
+    <a mat-button *ngFor="let specie of species">
+      <mat-icon class="material-icons">face</mat-icon>
+      {{ specie.name }}
+    </a>
+  </mat-card-actions>
+</mat-card>

@@ -1,5 +1,35 @@
 @import '../../../styles-variables';
 
+mat-card-title.mat-card-title {
+    height: 65px;
+}
+.terrain[_ngcontent-c10] {
+    height: 50px;
+}
+mat-card-actions.mat-card-actions {
+    overflow: auto;
+    height: 100px;
+    display: flex;
+/* justify-content: center; */
+    align-items: center;
+    flex-wrap: wrap;
+
+    a{
+      width: 100%;
+          margin: 0;
+          display: flex;
+    }
+}
+mat-card.mat-card {
+    // height: 750px;
+}
+.terrain{
+  height: 40px;
+}
+
+mat-card-content.mat-card-content {
+  height: 25px;
+}
 
 .next, .previous{
   position: fixed;

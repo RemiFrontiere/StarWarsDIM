@@ -5,28 +5,29 @@ import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
 
 import { Globals } from '../../class/globals';
 
-import { ICustomer, IPlanet } from '../../class/Interfaces';
+import { ICustomer, IPlanet, IResident, IVehicle } from '../../class/Interfaces';
 
 @Component({
-  selector: 'peoples-component',
-  templateUrl: './peoples.component.html',
-  styleUrls: ['./peoples.component.scss']
+  selector: 'vehicles-component',
+  templateUrl: './vehicles.component.html',
+  styleUrls: ['./vehicles.component.scss']
 })
-export class PeoplesComponent implements OnInit {
+export class VehiclesComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   versions = env.versions;
-  public peoples:ICustomer[];
+  public vehicles:IVehicle[];
   public currentPage:number = 1;
 
   constructor(public globals:Globals){
     this.currentPage = 1;
-    globals.apiGetPeoples(this.currentPage).subscribe(data => {
-    this.peoples = data;
-    console.log(this.peoples)
-   });
+
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.globals.apiGetVehicles(this.currentPage).subscribe(data => {
+    this.vehicles = data;
+   });
+  }
 
   openLink(link: string) {
     window.open(link, '_blank');
@@ -34,14 +35,14 @@ export class PeoplesComponent implements OnInit {
 
   public nextPage():void{
     this.currentPage++;
-    this.globals.apiGetPeoples(this.currentPage).subscribe(data => {
-    this.peoples = data;
+    this.globals.apiGetVehicles(this.currentPage).subscribe(data => {
+    this.vehicles = data;
    });
   }
   public previousPage():void{
     this.currentPage--;
-    this.globals.apiGetPeoples(this.currentPage).subscribe(data => {
-    this.peoples = data;
+    this.globals.apiGetVehicles(this.currentPage).subscribe(data => {
+    this.vehicles = data;
    });
   }
 }

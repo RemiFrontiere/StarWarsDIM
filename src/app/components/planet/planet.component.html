@@ -1,0 +1,29 @@
+
+  <mat-card>
+    <mat-card-title>{{planet.name}}</mat-card-title>
+    <img mat-card-image src="assets/02.png" alt="Photo">
+    <mat-card-content>
+      <mat-label><b>Climate : </b>{{planet.climate}}</mat-label>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-label><b>Gravity : </b>{{planet.gravity}}</mat-label>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-label><b>Diameter : </b>{{planet.diameter}} cm</mat-label>
+    </mat-card-content>
+    <mat-card-content class="terrain">
+      <mat-label><b>Terrain : </b>{{planet.terrain}}</mat-label>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-label><b>Surface water : </b>{{planet.surface_water}}</mat-label>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-label><b>Population : </b>{{planet.population}}</mat-label>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button *ngFor="let resident of residents">
+        <mat-icon class="material-icons">face</mat-icon>
+        {{resident.name}}
+      </a>
+    </mat-card-actions>
+  </mat-card>

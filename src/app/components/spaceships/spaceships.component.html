@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="main-heading">Spaceships</h1>
+    </div>
+  </div>
+  <div class="next">
+    <button mat-fab (click)="nextPage()" *ngIf="currentPage <= 3">></button>
+  </div>
+  <div class="previous">
+    <button mat-fab (click)="previousPage()" *ngIf="currentPage > 1"><</button>
+  </div>
+  <div class="row align-items-end">
+    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements" *ngFor="let spaceship of spaceships">
+      <spaceship-component [spaceship]="spaceship"></spaceship-component>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,13 @@ import { AppComponent } from './components/app/app.component';
 import { Routes, RouterModule } from '@angular/router';
 
 import { PeoplesComponent } from './components/peoples/peoples.component';
+import { PeopleComponent } from './components/people/people.component';
+import { PlanetsComponent } from './components/planets/planets.component';
+import { PlanetComponent } from './components/planet/planet.component';
+import { VehiclesComponent } from './components/vehicles/vehicles.component';
+import { VehicleComponent } from './components/vehicle/vehicle.component';
+import { SpaceshipsComponent } from './components/spaceships/spaceships.component';
+import { SpaceshipComponent } from './components/spaceship/spaceship.component';
 
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { HttpModule } from '@angular/http';
@@ -42,7 +49,7 @@ import { Globals } from './class/globals';
 
     RouterModule
   ],
-  declarations: [AppComponent, PeoplesComponent],
+  declarations: [AppComponent, SpaceshipsComponent, SpaceshipComponent, VehicleComponent, VehiclesComponent, PeoplesComponent, PlanetsComponent, PlanetComponent, PeopleComponent],
   providers: [Globals],
   bootstrap: [AppComponent]
 })
